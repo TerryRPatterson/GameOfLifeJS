@@ -14,3 +14,6 @@ assert(output === expected,`Failed Expected:
                             ${expected}
                             Recieved:
                             ${output}`)
+assert(GameOfLife(expected) === "ooo\n"+
+                                "xxx\n"+
+                                "ooo\n", "fail test 2");

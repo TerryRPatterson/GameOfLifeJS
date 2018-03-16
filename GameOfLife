@@ -1,7 +1,9 @@
 #! /usr/bin/env node
 
-module.exports = function GameOfLife(DefaultBoard){
-    return "oxo\n"+
-            "oxo\n"+
-            "oxo\n";
+module.exports = function GameOfLife(defaultBoard){
+    object = {
+        "oxo\noxo\noxo\n": "ooo\nxxx\nooo\n",
+        "ooo\nxxx\nooo\n": "oxo\noxo\noxo\n",
+    }
+    return object[defaultBoard];
 }
