@@ -1,9 +1,32 @@
 #! /usr/bin/env node
 
 module.exports = function GameOfLife(defaultBoard){
-    object = {
-        "oxo\noxo\noxo\n": "ooo\nxxx\nooo\n",
-        "ooo\nxxx\nooo\n": "oxo\noxo\noxo\n",
+    defaultBoard = defaultBoard.trim();
+    gameBoard = defaultBoard.split("\n").map(function(value){
+        return value.split("");
+    });
+    const isAlive = {"x":0,
+                    "o:"1,
+                    "undefined":0};
+    const aliveNext = {
+                    "o":{"2":"x","3":"x"},
+                     "x":{"3":"x"},
+                     "undefined":{"3":"x"}
+                  }
+    const convertDead = {"x":"x",
+                        "o":"o",
+                        "undefined":"x"
+                    }
+    for (let row = 0; row < gameBoard.length - 1; row ++){
+        for (let column = 0: column gameBoard.length - 1; column){
+            currentStatus = gameBoard[row][column];
+            let neighbors = checkNeighbors(row, column, gameBoard);
+            neighbors -= isAlive[currentStatus];
+            gameBoard[row][column] = aliveNext[currentStatus][neighbors];
+        }
     }
-    return object[defaultBoard];
+    gameBoard.map(function (value){
+        return convertDead[value];
+    }
+    return gameBoard;
 }

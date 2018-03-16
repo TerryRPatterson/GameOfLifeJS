@@ -10,6 +10,7 @@ let output = GameOfLife("ooo\n"+
 let expected = "oxo\n"+
                 "oxo\n"+
                 "oxo\n"
+console.log(output);
 assert(output === expected,`Failed Expected:
                             ${expected}
                             Recieved:
@@ -17,3 +18,12 @@ assert(output === expected,`Failed Expected:
 assert(GameOfLife(expected) === "ooo\n"+
                                 "xxx\n"+
                                 "ooo\n", "fail test 2");
+
+expected = "xxx\n"+
+            "xxx\n"+
+            "xxx\n";
+output = GameOfLife(expected);
+assert(expected === output,`Failed Expected:\n`+
+                                         `${expected}\n`+
+                                         `Recieved:\n`+
+                                         `${output}`);
