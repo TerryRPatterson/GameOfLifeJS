@@ -8,16 +8,26 @@ module.exports = function GameOfLife(defaultBoard){
     return object[defaultBoard];
 }
 
+var testArray = [
+    ['o', undefined, 'o'],
+    ['o', undefined, 'o'],
+    ['o', undefined, 'o']
+]
+
 var checkNeighbors = function(row, col, array) {
     var count = 0;
     var isAlive = {
         o: 1,
         undefined: 0,
     }
-    for (var i = math.max(0, row - 1); i < math.min(row.length, row + 1); i++) {
-        for (var j = math.max (0, col - 1); j < math.min(col.length, col + 1); j++){
+    for (var i = Math.max(0, row - 2); i < Math.min(array.length, row + 2); i++) {
+        debugger;
+        for (var j = Math.max(0, col - 2); j < Math.min(array[row].length, col + 2); j++) {
+            debugger;
             count += isAlive[array[i][j]];
         }
     }
-    return count
+    return count;
 }
+
+console.log(checkNeighbors(1, 1, testArray));
