@@ -1,0 +1,11 @@
+{
+  "name": "gameoflife",
+  "version": "0.0.1",
+  "description": "",
+  "main": "GameOfLife",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}

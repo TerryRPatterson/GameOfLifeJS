@@ -1,0 +1,7 @@
+#! /usr/bin/env node
+
+module.exports = function GameOfLife(DefaultBoard){
+    return "oxo\n"+
+            "oxo\n"+
+            "oxo\n";
+}

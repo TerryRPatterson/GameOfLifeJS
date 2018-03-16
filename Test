@@ -1,0 +1,16 @@
+#! /usr/bin/env node
+
+let assert = require("assert");
+let GameOfLife = require("./GameOfLife");
+
+
+let output = GameOfLife("ooo\n"+
+                        "xxx\n"+
+                        "ooo\n")
+let expected = "oxo\n"+
+                "oxo\n"+
+                "oxo\n"
+assert(output === expected,`Failed Expected:
+                            ${expected}
+                            Recieved:
+                            ${output}`)
