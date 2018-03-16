@@ -7,3 +7,17 @@ module.exports = function GameOfLife(defaultBoard){
     }
     return object[defaultBoard];
 }
+
+var checkNeighbors = function(row, col, array) {
+    var count = 0;
+    var isAlive = {
+        o: 1,
+        undefined: 0,
+    }
+    for (var i = math.max(0, row - 1); i < math.min(row.length, row + 1); i++) {
+        for (var j = math.max (0, col - 1); j < math.min(col.length, col + 1); j++){
+            count += isAlive[array[i][j]];
+        }
+    }
+    return count
+}
